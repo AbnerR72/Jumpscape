@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://blsssg1cm1lfy"]
+
+[ext_resource type="Script" uid="uid://g46sw266dvxm" path="res://scripts/estalactita.gd" id="1_ufoq6"]
+[ext_resource type="Texture2D" uid="uid://c4jdc2qgvlgix" path="res://assets/tilesets/estalactitas.png" id="2_ndwns"]
+[ext_resource type="AudioStream" uid="uid://cq3dldc4nt5qc" path="res://assets/sound/boulder_drop.ogg" id="3_ndwns"]
+
+[node name="estalactita" type="AnimatableBody2D" unique_id=44321766]
+input_pickable = true
+sync_to_physics = false
+script = ExtResource("1_ufoq6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1527576671]
+position = Vector2(44.26971, 45.684177)
+rotation = 3.1408367
+scale = Vector2(5.542252, 5.576382)
+texture = ExtResource("2_ndwns")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1986204963]
+polygon = PackedVector2Array(17, 2, 71, 2, 45, 90)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=952898703]
+stream = ExtResource("3_ndwns")
+volume_db = 2.053
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

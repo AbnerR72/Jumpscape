@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://dn2hq4xcxjd32"]
+
+[ext_resource type="PackedScene" uid="uid://d1jafuy5svo37" path="res://scenes/level/level_template.tscn" id="1_3v52h"]
+[ext_resource type="PackedScene" uid="uid://c7vsilsusg3jw" path="res://scenes/objects/plataforma.tscn" id="2_bib3a"]
+[ext_resource type="Script" uid="uid://tcf4v7212ih0" path="res://scripts/level_scripts/nivel_6.gd" id="2_wm73f"]
+[ext_resource type="PackedScene" uid="uid://8r86qm1fit0u" path="res://scenes/objects/door.tscn" id="3_d2xqx"]
+[ext_resource type="PackedScene" uid="uid://brrpji5811mpv" path="res://scenes/objects/pinchos.tscn" id="5_w6fuo"]
+
+[node name="Nivel6" unique_id=1512688407 instance=ExtResource("1_3v52h")]
+script = ExtResource("2_wm73f")
+nombre_nivel = "N6 - Abre la puerta V2"
+
+[node name="plataforma" parent="." index="5" unique_id=545447943 instance=ExtResource("2_bib3a")]
+position = Vector2(-131, 15)
+
+[node name="plataforma2" parent="." index="6" unique_id=2011090744 instance=ExtResource("2_bib3a")]
+position = Vector2(34, -52)
+
+[node name="plataforma3" parent="." index="7" unique_id=1880419124 instance=ExtResource("2_bib3a")]
+position = Vector2(188, 5)
+
+[node name="plataforma4" parent="." index="8" unique_id=1840073004 instance=ExtResource("2_bib3a")]
+position = Vector2(-150, -120)
+
+[node name="Puerta" parent="." index="9" unique_id=1960888139 instance=ExtResource("3_d2xqx")]
+position = Vector2(398, -65)
+
+[node name="Button" type="Button" parent="." index="10" unique_id=648823010]
+modulate = Color(1, 1, 1, 0)
+offset_left = 396.0
+offset_top = -65.0
+offset_right = 404.0
+offset_bottom = -57.0
+scale = Vector2(1.8633105, 8.389593)
+
+[node name="pinchos" parent="." index="11" unique_id=1170063409 instance=ExtResource("5_w6fuo")]
+position = Vector2(-291, 56)
+
+[node name="pinchos2" parent="." index="12" unique_id=828403575 instance=ExtResource("5_w6fuo")]
+position = Vector2(-268, 56)
+
+[node name="pinchos3" parent="." index="13" unique_id=1880304159 instance=ExtResource("5_w6fuo")]
+position = Vector2(-246, 55)
+
+[node name="pinchos4" parent="." index="14" unique_id=1166259694 instance=ExtResource("5_w6fuo")]
+position = Vector2(-222, 55)
+
+[node name="pinchos5" parent="." index="15" unique_id=230798619 instance=ExtResource("5_w6fuo")]
+position = Vector2(-130, 72)
+
+[node name="pinchos10" parent="." index="16" unique_id=690427055 instance=ExtResource("5_w6fuo")]
+position = Vector2(-111, -23)
+
+[node name="pinchos11" parent="." index="17" unique_id=1733966538 instance=ExtResource("5_w6fuo")]
+position = Vector2(-159, -82)
+rotation = -3.1415927
+
+[node name="pinchos6" parent="." index="18" unique_id=1089933795 instance=ExtResource("5_w6fuo")]
+position = Vector2(344, 43)
+rotation = -1.5707964
+
+[node name="pinchos9" parent="." index="19" unique_id=118946176 instance=ExtResource("5_w6fuo")]
+position = Vector2(344, 65)
+rotation = -1.5707964
+
+[node name="pinchos7" parent="." index="20" unique_id=288587780 instance=ExtResource("5_w6fuo")]
+position = Vector2(343, -104)
+
+[node name="pinchos8" parent="." index="21" unique_id=491200769 instance=ExtResource("5_w6fuo")]
+position = Vector2(343, -104)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

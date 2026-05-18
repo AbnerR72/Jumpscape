@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ccdgan5gno3oo"]
+
+[ext_resource type="PackedScene" uid="uid://x6v18wsp7i5t" path="res://scenes/player/personaje.tscn" id="1_g5oik"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g5oik"]
+distance = -4.0
+
+[node name="Nivel_prueba" type="Node2D" unique_id=2053524011]
+
+[node name="personaje" parent="." unique_id=186041609 instance=ExtResource("1_g5oik")]
+position = Vector2(-1, -20)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1432301702]
+position = Vector2(5, -5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1560804037]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1774247020]
+shape = SubResource("WorldBoundaryShape2D_g5oik")

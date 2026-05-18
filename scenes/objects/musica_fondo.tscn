@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bwb1yypvjqknm"]
+
+[ext_resource type="AudioStream" uid="uid://cqvxwsgr43c6g" path="res://assets/sound/ambient.ogg" id="1_mcoua"]
+
+[node name="MusicaFondo" type="AudioStreamPlayer" unique_id=1786596898]
+stream = ExtResource("1_mcoua")
+volume_db = -14.836
+autoplay = true

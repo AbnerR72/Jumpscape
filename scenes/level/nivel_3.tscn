@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://dmjd8do1f5pax"]
+
+[ext_resource type="PackedScene" uid="uid://d1jafuy5svo37" path="res://scenes/level/level_template.tscn" id="1_f107j"]
+[ext_resource type="PackedScene" uid="uid://brrpji5811mpv" path="res://scenes/objects/pinchos.tscn" id="2_2bmb5"]
+[ext_resource type="PackedScene" uid="uid://blsssg1cm1lfy" path="res://scenes/objects/estalactita.tscn" id="3_s2ef1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_motjr"]
+size = Vector2(20, 63)
+
+[node name="Nivel3" unique_id=1512688407 instance=ExtResource("1_f107j")]
+nombre_nivel = "N2: Ayudalo"
+siguiente_nivel = "res://scenes/level/nivel_4.tscn"
+
+[node name="pinchos" parent="." index="5" unique_id=1170063409 instance=ExtResource("2_2bmb5")]
+position = Vector2(-303, 56)
+
+[node name="pinchos2" parent="." index="6" unique_id=2010429932 instance=ExtResource("2_2bmb5")]
+position = Vector2(-282, 57)
+
+[node name="pinchos3" parent="." index="7" unique_id=28338264 instance=ExtResource("2_2bmb5")]
+position = Vector2(-262, 56)
+
+[node name="pinchos4" parent="." index="8" unique_id=1043234402 instance=ExtResource("2_2bmb5")]
+position = Vector2(-242, 57)
+
+[node name="pinchos5" parent="." index="9" unique_id=1100541605 instance=ExtResource("2_2bmb5")]
+position = Vector2(-223, 56)
+
+[node name="pinchos6" parent="." index="10" unique_id=1958300567 instance=ExtResource("2_2bmb5")]
+position = Vector2(-195, 72)
+
+[node name="pinchos7" parent="." index="11" unique_id=296919156 instance=ExtResource("2_2bmb5")]
+position = Vector2(-177, 72)
+
+[node name="pinchos8" parent="." index="12" unique_id=1404026465 instance=ExtResource("2_2bmb5")]
+position = Vector2(-161, 72)
+
+[node name="pinchos9" parent="." index="13" unique_id=1414897712 instance=ExtResource("2_2bmb5")]
+position = Vector2(-139, 73)
+
+[node name="pinchos12" parent="." index="14" unique_id=11875530 instance=ExtResource("2_2bmb5")]
+position = Vector2(-79, 72)
+
+[node name="pinchos13" parent="." index="15" unique_id=1102325128 instance=ExtResource("2_2bmb5")]
+position = Vector2(-56, 72)
+
+[node name="pinchos14" parent="." index="16" unique_id=2006238365 instance=ExtResource("2_2bmb5")]
+position = Vector2(-35, 72)
+
+[node name="pinchos15" parent="." index="17" unique_id=129263694 instance=ExtResource("2_2bmb5")]
+position = Vector2(-18, 72)
+
+[node name="pinchos16" parent="." index="18" unique_id=156220976 instance=ExtResource("2_2bmb5")]
+position = Vector2(2, 72)
+
+[node name="pinchos17" parent="." index="19" unique_id=81286104 instance=ExtResource("2_2bmb5")]
+position = Vector2(21, 72)
+
+[node name="pinchos18" parent="." index="20" unique_id=1444559053 instance=ExtResource("2_2bmb5")]
+position = Vector2(37, 72)
+
+[node name="pinchos19" parent="." index="21" unique_id=332546183 instance=ExtResource("2_2bmb5")]
+position = Vector2(52, 72)
+
+[node name="pinchos20" parent="." index="22" unique_id=739105682 instance=ExtResource("2_2bmb5")]
+position = Vector2(68, 72)
+
+[node name="pinchos21" parent="." index="23" unique_id=972426206 instance=ExtResource("2_2bmb5")]
+position = Vector2(85, 72)
+
+[node name="pinchos22" parent="." index="24" unique_id=1788512479 instance=ExtResource("2_2bmb5")]
+position = Vector2(99, 72)
+
+[node name="pinchos23" parent="." index="25" unique_id=2117712035 instance=ExtResource("2_2bmb5")]
+position = Vector2(122, 72)
+
+[node name="pinchos24" parent="." index="26" unique_id=252147449 instance=ExtResource("2_2bmb5")]
+position = Vector2(142, 72)
+
+[node name="pinchos25" parent="." index="27" unique_id=1867458185 instance=ExtResource("2_2bmb5")]
+position = Vector2(158, 72)
+
+[node name="pinchos26" parent="." index="28" unique_id=996998044 instance=ExtResource("2_2bmb5")]
+position = Vector2(176, 72)
+
+[node name="pinchos27" parent="." index="29" unique_id=497494297 instance=ExtResource("2_2bmb5")]
+position = Vector2(194, 72)
+
+[node name="pinchos28" parent="." index="30" unique_id=1960878754 instance=ExtResource("2_2bmb5")]
+position = Vector2(214, 72)
+
+[node name="pinchos29" parent="." index="31" unique_id=996788181 instance=ExtResource("2_2bmb5")]
+position = Vector2(232, 72)
+
+[node name="pinchos30" parent="." index="32" unique_id=1193652906 instance=ExtResource("2_2bmb5")]
+position = Vector2(251, 72)
+
+[node name="pinchos31" parent="." index="33" unique_id=1601698818 instance=ExtResource("2_2bmb5")]
+position = Vector2(269, 73)
+
+[node name="pinchos32" parent="." index="34" unique_id=1932751054 instance=ExtResource("2_2bmb5")]
+position = Vector2(283, 57)
+
+[node name="pinchos33" parent="." index="35" unique_id=408467546 instance=ExtResource("2_2bmb5")]
+position = Vector2(301, 57)
+
+[node name="pinchos34" parent="." index="36" unique_id=2133772655 instance=ExtResource("2_2bmb5")]
+position = Vector2(324, 41)
+
+[node name="pinchos35" parent="." index="37" unique_id=1894873976 instance=ExtResource("2_2bmb5")]
+position = Vector2(344, 40)
+
+[node name="pinchos10" parent="." index="38" unique_id=1052033768 instance=ExtResource("2_2bmb5")]
+position = Vector2(-118, 72)
+
+[node name="pinchos11" parent="." index="39" unique_id=1946364614 instance=ExtResource("2_2bmb5")]
+position = Vector2(-102, 72)
+
+[node name="estalactita" parent="." index="40" unique_id=44321766 instance=ExtResource("3_s2ef1")]
+position = Vector2(-119, -208)
+
+[node name="estalactita2" parent="." index="41" unique_id=754773755 instance=ExtResource("3_s2ef1")]
+position = Vector2(101, -209)
+
+[node name="salida" type="Area2D" parent="." index="42" unique_id=831792955]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="salida" index="0" unique_id=469500460]
+position = Vector2(412, -32.5)
+shape = SubResource("RectangleShape2D_motjr")
+
+[connection signal="body_entered" from="salida" to="." method="_on_salida_body_entered"]

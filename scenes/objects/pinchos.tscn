@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://brrpji5811mpv"]
+
+[ext_resource type="Script" uid="uid://d4muqrgbrwh43" path="res://scripts/pinchos.gd" id="1_6qhpp"]
+[ext_resource type="Texture2D" uid="uid://bm25iv867vns0" path="res://assets/tilesets/trampas.png" id="1_tvgfb"]
+
+[node name="pinchos" type="Area2D" unique_id=1170063409]
+script = ExtResource("1_6qhpp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1926167602]
+position = Vector2(12.687501, 11.875002)
+scale = Vector2(1.5390625, 1.515625)
+texture = ExtResource("1_tvgfb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1042010324]
+position = Vector2(-1, 0)
+polygon = PackedVector2Array(14, 2, 7, 24, 20, 24)

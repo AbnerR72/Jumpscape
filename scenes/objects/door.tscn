@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://8r86qm1fit0u"]
+
+[ext_resource type="Script" uid="uid://brm5fo03h60t3" path="res://scripts/door.gd" id="1_uvdjg"]
+[ext_resource type="AudioStream" uid="uid://dkyxjecndrxgf" path="res://assets/sound/stone_door.ogg" id="2_uw3m6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvdjg"]
+size = Vector2(11, 66.5)
+
+[node name="Puerta" type="StaticBody2D" unique_id=1960888139]
+script = ExtResource("1_uvdjg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1471885454]
+position = Vector2(5.5, 33.75)
+shape = SubResource("RectangleShape2D_uvdjg")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1832059071]
+offset_right = 11.0
+offset_bottom = 67.0
+color = Color(0.34901962, 0.2, 0.15294118, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1467995176]
+stream = ExtResource("2_uw3m6")
+volume_db = 5.832

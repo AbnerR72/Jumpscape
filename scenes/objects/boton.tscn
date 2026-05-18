@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dpkrk02pbledl"]
+
+[node name="boton" type="Area2D" unique_id=1059676201]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=397632576]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=687110132]
