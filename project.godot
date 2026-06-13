@@ -11,13 +11,10 @@ config_version=5
 [application]
 
 config/name="Jumpscape"
-<<<<<<< HEAD
-run/main_scene="uid://je0os8loiduf"
-=======
-run/main_scene="uid://cljym3klq6hq"
->>>>>>> 6cd49c6 (hasta nivel 9)
+run/main_scene="uid://dn2hq4xcxjd32"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://4xq5ytancumc"
+<<<<<<<HEADrun/main_scene="uid://je0os8loiduf"
 
 [autoload]
 

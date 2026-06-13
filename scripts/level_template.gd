@@ -20,18 +20,25 @@ extends Node2D
 
 
 func _ready() -> void:
-	# Actualizamos el texto en pantalla
-	$CapaUI/HUD/TextoNivel.text = nombre_nivel
+	# 1. Actualizamos el texto en pantalla de forma segura
+	if has_node("CapaUI/HUD/TextoNivel"):
+		$CapaUI/HUD/TextoNivel.text = nombre_nivel
 	
-	# Nos aseguramos de que el menú de pausa esté oculto al iniciar
-	menu_pausa.hide()
+	# 2. Nos aseguramos de que el menú de pausa esté oculto al iniciar
+	if menu_pausa:
+		menu_pausa.hide()
 	
-	# Asignamos el texto de la pista al Label
-	$CapaUI/VentanaPista/TextoPista.text = texto_pista
+	# 3. Asignamos el texto de la pista al Label SOLO si el nodo existe
+	if has_node("CapaUI/VentanaPista/TextoPista"):
+		$CapaUI/VentanaPista/TextoPista.text = texto_pista
+	else:
+		print("Advertencia: No se encontró la ventana de pistas en ", nombre_nivel)
 	
-	# Conectamos el botón de la pista (si no lo haces desde el editor visual)
-	$CapaUI/BotonPista.pressed.connect(_on_boton_pista_pressed)
-
+	# 4. Conectamos el botón de la pista SOLO si el botón existe
+	if has_node("CapaUI/BotonPista"):
+		if not $CapaUI/BotonPista.pressed.is_connected(_on_boton_pista_pressed):
+			$CapaUI/BotonPista.pressed.connect(_on_boton_pista_pressed)
+	
 func _process(delta: float) -> void:
 	# Lógica global: Reiniciar nivel con la tecla R (debes configurar "reiniciar" en el Input Map)
 	if Input.is_action_just_pressed("reiniciar"):
@@ -72,7 +79,6 @@ func game_over() -> void:
 
 
 func _on_salida_body_entered(body: Node2D) -> void:
-<<<<<<< HEAD
 		if body.is_in_group("player"):
 			call_deferred("nivel_completado")
 
@@ -93,8 +99,3 @@ func _on_boton_pista_pressed() -> void:
 func _on_timer_timeout() -> void:
 	var ventana = $CapaUI/VentanaPista
 	ventana.visible = false
-=======
-	# Si está en el grupo viejo O en el grupo nuevo, pasa de nivel
-	if body.is_in_group("player") or body.is_in_group("jugador"):
-		call_deferred("nivel_completado")
->>>>>>> 6cd49c6 (hasta nivel 9)
