@@ -16,6 +16,8 @@ extends Node2D
 # Variables que cada nivel heredado podrá modificar
 @export var nombre_nivel: String = "Nivel Desconocido"
 @export var siguiente_nivel: String = "" # Ruta del siguiente nivel (ej: "res://niveles/nivel_02.tscn")
+@export_multiline var texto_pista: String = "Pista no disponible." #Variable para las pistas
+
 
 func _ready() -> void:
 	# Actualizamos el texto en pantalla
@@ -23,6 +25,12 @@ func _ready() -> void:
 	
 	# Nos aseguramos de que el menú de pausa esté oculto al iniciar
 	menu_pausa.hide()
+	
+	# Asignamos el texto de la pista al Label
+	$CapaUI/VentanaPista/TextoPista.text = texto_pista
+	
+	# Conectamos el botón de la pista (si no lo haces desde el editor visual)
+	$CapaUI/BotonPista.pressed.connect(_on_boton_pista_pressed)
 
 func _process(delta: float) -> void:
 	# Lógica global: Reiniciar nivel con la tecla R (debes configurar "reiniciar" en el Input Map)
@@ -64,5 +72,23 @@ func game_over() -> void:
 
 
 func _on_salida_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
+		if body.is_in_group("player"):
 			call_deferred("nivel_completado")
+
+func _on_boton_pista_pressed() -> void:
+	var ventana = $CapaUI/VentanaPista
+	var timer = $CapaUI/VentanaPista/Timer
+	
+	if not ventana.visible:
+		# Si la ventana estaba oculta, la mostramos y arrancamos el reloj de 7 segundos
+		ventana.visible = true
+		timer.start()
+	else:
+		# Si el jugador decide cerrarla manualmente antes de los 7 segundos,
+		# la ocultamos y detenemos el reloj para evitar bugs.
+		ventana.visible = false
+		timer.stop()
+
+func _on_timer_timeout() -> void:
+	var ventana = $CapaUI/VentanaPista
+	ventana.visible = false

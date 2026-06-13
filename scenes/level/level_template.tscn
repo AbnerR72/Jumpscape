@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bv2mcg8wv52q2" path="res://assets/background/grey_L2.png" id="3_2g52m"]
 [ext_resource type="Texture2D" uid="uid://cjn00ba30pl33" path="res://assets/background/grey_L3.png" id="4_f6s44"]
 [ext_resource type="Texture2D" uid="uid://dxid2itvnkfsi" path="res://assets/background/grey_L4.png" id="5_uscmr"]
+[ext_resource type="Texture2D" uid="uid://1nfwcwd8i6lm" path="res://assets/images/pista.png" id="10_f6s44"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wqo6"]
 texture = ExtResource("1_wnoy4")
@@ -347,3 +348,33 @@ offset_left = 270.0
 offset_top = -244.0
 offset_right = 310.0
 offset_bottom = -204.0
+
+[node name="BotonPista" type="Button" parent="CapaUI" unique_id=1648670403]
+offset_left = 451.0
+offset_top = 9.0
+offset_right = 523.0
+offset_bottom = 81.0
+scale = Vector2(0.2780047, 0.2927985)
+icon = ExtResource("10_f6s44")
+
+[node name="VentanaPista" type="Panel" parent="CapaUI" unique_id=1963404575]
+visible = false
+offset_left = 115.0
+offset_top = 3.0
+offset_right = 395.0
+offset_bottom = 30.0
+
+[node name="TextoPista" type="Label" parent="CapaUI/VentanaPista" unique_id=357129826]
+layout_mode = 0
+offset_right = 277.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.8)
+text = "
+"
+autowrap_mode = 2
+
+[node name="Timer" type="Timer" parent="CapaUI/VentanaPista" unique_id=659005768]
+wait_time = 7.0
+one_shot = true
+
+[connection signal="timeout" from="CapaUI/VentanaPista/Timer" to="." method="_on_timer_timeout"]

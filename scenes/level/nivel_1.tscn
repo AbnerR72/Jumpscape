@@ -12,6 +12,7 @@ size = Vector2(15, 64)
 [node name="Nivel1" unique_id=1512688407 instance=ExtResource("1_wrtct")]
 nombre_nivel = "N1- Usa la palanca"
 siguiente_nivel = "res://scenes/level/nivel_2.tscn"
+texto_pista = "Ataca a la palanca"
 
 [node name="salida" type="Area2D" parent="." index="5" unique_id=926796027]
 

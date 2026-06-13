@@ -10,6 +10,7 @@ size = Vector2(20, 63)
 [node name="Nivel3" unique_id=1512688407 instance=ExtResource("1_f107j")]
 nombre_nivel = "N2: Ayudalo"
 siguiente_nivel = "res://scenes/level/nivel_4.tscn"
+texto_pista = "Intenta usar el click."
 
 [node name="pinchos" parent="." index="5" unique_id=1170063409 instance=ExtResource("2_2bmb5")]
 position = Vector2(-303, 56)

@@ -74,6 +74,7 @@ func _physics_process(delta: float) -> void:
 	# Maneja el salto (Añadido 'puede_saltar' y ajustado para saltar en la dirección correcta)
 	if puede_saltar and Input.is_action_just_pressed("jump") and is_on_floor() and not is_crouching and not is_getting_up:
 		velocity.y = jump * direccion_gravedad
+		$SonidoSalto.play() # Reproduce el sonido del salto
 	
 	# Invertir Sprite 
 	if direction < 0:
@@ -85,6 +86,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("attack") and not is_crouching and not is_getting_up:
 		is_attacking = true
 		animated_sprite_2d.play("attack")
+		$SonidoAtaque.play() # Reproduce el sonido de ataque
 	
 	# --- MANEJO DE ANIMACIONES ---
 	# Solo reproduce animaciones normales si no está atacando y no se está levantando

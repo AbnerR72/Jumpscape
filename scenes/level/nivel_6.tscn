@@ -8,7 +8,8 @@
 
 [node name="Nivel6" unique_id=1512688407 instance=ExtResource("1_3v52h")]
 script = ExtResource("2_wm73f")
-nombre_nivel = "N6 - Abre la puerta V2"
+nombre_nivel = "N6 - Abre la puerta version 2"
+texto_pista = "Jugador + Click + Puerta"
 
 [node name="plataforma" parent="." index="5" unique_id=545447943 instance=ExtResource("2_bib3a")]
 position = Vector2(-131, 15)
