@@ -6,10 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://8r86qm1fit0u" path="res://scenes/objects/door.tscn" id="3_d2xqx"]
 [ext_resource type="PackedScene" uid="uid://brrpji5811mpv" path="res://scenes/objects/pinchos.tscn" id="5_w6fuo"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6fuo"]
+size = Vector2(20, 62)
+
 [node name="Nivel6" unique_id=1512688407 instance=ExtResource("1_3v52h")]
 script = ExtResource("2_wm73f")
+<<<<<<< HEAD
 nombre_nivel = "N6 - Abre la puerta version 2"
 texto_pista = "Jugador + Click + Puerta"
+=======
+nombre_nivel = "N6 - Abre la puerta V2"
+siguiente_nivel = "res://scenes/level/nivel_7.tscn"
+>>>>>>> 6cd49c6 (hasta nivel 9)
 
 [node name="plataforma" parent="." index="5" unique_id=545447943 instance=ExtResource("2_bib3a")]
 position = Vector2(-131, 15)
@@ -70,4 +78,11 @@ position = Vector2(343, -104)
 [node name="pinchos8" parent="." index="21" unique_id=491200769 instance=ExtResource("5_w6fuo")]
 position = Vector2(343, -104)
 
+[node name="salida" type="Area2D" parent="." index="22" unique_id=833066855]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="salida" index="0" unique_id=1593953454]
+position = Vector2(424, -33)
+shape = SubResource("RectangleShape2D_w6fuo")
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="body_entered" from="salida" to="." method="_on_salida_body_entered"]

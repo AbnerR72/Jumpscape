@@ -72,6 +72,7 @@ func game_over() -> void:
 
 
 func _on_salida_body_entered(body: Node2D) -> void:
+<<<<<<< HEAD
 		if body.is_in_group("player"):
 			call_deferred("nivel_completado")
 
@@ -92,3 +93,8 @@ func _on_boton_pista_pressed() -> void:
 func _on_timer_timeout() -> void:
 	var ventana = $CapaUI/VentanaPista
 	ventana.visible = false
+=======
+	# Si está en el grupo viejo O en el grupo nuevo, pasa de nivel
+	if body.is_in_group("player") or body.is_in_group("jugador"):
+		call_deferred("nivel_completado")
+>>>>>>> 6cd49c6 (hasta nivel 9)

@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed = 300
 @export var jump = -400
 
+@export var modo_impulso_mouse: bool = false
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 #Variables para el NIVEL 5
@@ -24,6 +25,19 @@ func _ready() -> void:
 	# Conectamos la señal que avisa cuando una animación termina
 	
 func _physics_process(delta: float) -> void:
+	# --- NUEVO: MANEJO DE SALTO / PENALIZACIÓN ---
+	if Input.is_action_just_pressed("jump"):
+		if modo_impulso_mouse:
+			# Si el modo especial está activo y presiona "W" o espacio, muere con Death2
+			morir("death2")
+			return
+		elif puede_saltar and is_on_floor() and not is_crouching and not is_getting_up:
+			# Salto normal para los niveles del 1 al 6
+			velocity.y = jump * direccion_gravedad
+			# Maneja el salto normal
+			if puede_saltar and Input.is_action_just_pressed("jump") and is_on_floor() and not is_crouching and not is_getting_up:
+				velocity.y = jump * direccion_gravedad
+				$SonidoSalto.play() # <--- AÑADE ESTA LÍNEA
 	# --- NUEVO: BLOQUEO POR MUERTE ---
 	# Si está muerto, detenemos la lectura de controles pero dejamos que caiga
 	if esta_muerto:
@@ -123,11 +137,13 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	elif animated_sprite_2d.animation == "up":
 		is_getting_up = false
 		
-func morir():
+func morir(animacion_muerte: String = "death"):
 	if esta_muerto: return # Evita que muera dos veces si toca dos pinchos a la vez
 	
 	esta_muerto = true
 	velocity = Vector2.ZERO # Lo frenamos en seco por si venía corriendo
+	# NUEVO: Le avisa a todos los enemigos del mapa que regresen a sus posiciones
+	get_tree().call_group("enemigos", "reiniciar_posicion")
 	
 	# NUEVO: Si muere invertido, restauramos la gravedad normal para el respawn
 	direccion_gravedad = 1
@@ -135,12 +151,19 @@ func morir():
 	animated_sprite_2d.flip_v = false
 	
 	# IMPORTANTE: Cambia "AnimatedSprite2D" y "muerte" por los nombres exactos que tú uses
-	$AnimatedSprite2D.play("death") 
+	$AnimatedSprite2D.play(animacion_muerte) 
 	# Le decimos al código que pause esta función hasta que la animación termine
-	await $AnimatedSprite2D.animation_finished 
+	await $AnimatedSprite2D.animation_finished
 	# Lo teletransportamos al inicio
 	global_position = posicion_inicial
 	# Lo "revivimos"
 	esta_muerto = false
 	# Reproducimos su animación de estar quieto para que no se quede trabado en la de muerte
 	$AnimatedSprite2D.play("idle")
+	get_tree().reload_current_scene()
+# Esta función se ejecuta automáticamente si haces click sobre el CollisionShape del personaje
+func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
+	if modo_impulso_mouse and event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			# Aplicamos un impulso vertical directo (puedes ajustar el -450 a tu gusto)
+			velocity.y = -450

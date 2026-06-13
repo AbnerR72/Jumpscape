@@ -2,8 +2,12 @@
 
 [ext_resource type="Script" uid="uid://4girluocjunp" path="res://scripts/personaje.gd" id="1_bsujw"]
 [ext_resource type="Texture2D" uid="uid://c1l0w7sxikd2w" path="res://assets/character/AnimationSheet_Character.png" id="1_lk6oi"]
+<<<<<<< HEAD
 [ext_resource type="AudioStream" uid="uid://hd6jdk70kip" path="res://assets/sound/jump.wav" id="3_ckb1x"]
 [ext_resource type="AudioStream" uid="uid://cc6nnfwnp7sja" path="res://assets/sound/attack.wav" id="4_wtsvc"]
+=======
+[ext_resource type="AudioStream" uid="uid://bo46y4b27lvcb" path="res://assets/sound/personaje/salto_pj.mp3" id="3_ckb1x"]
+>>>>>>> 6cd49c6 (hasta nivel 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bsujw"]
 atlas = ExtResource("1_lk6oi")
@@ -299,9 +303,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wsxkc")
 }],
-"loop": true,
+"loop": false,
 "name": &"death2",
-"speed": 6.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -459,12 +463,13 @@ animations = [{
 radius = 5.0
 height = 24.0
 
-[node name="personaje" type="CharacterBody2D" unique_id=186041609 groups=["player"]]
+[node name="personaje" type="CharacterBody2D" unique_id=186041609 groups=["jugador", "player"]]
+input_pickable = true
 script = ExtResource("1_bsujw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1450541005]
 sprite_frames = SubResource("SpriteFrames_156nw")
-animation = &"death"
+animation = &"death2"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2056835872]
@@ -472,11 +477,16 @@ visible = false
 position = Vector2(-1, 1)
 shape = SubResource("CapsuleShape2D_lk6oi")
 
+<<<<<<< HEAD
 [node name="SonidoSalto" type="AudioStreamPlayer" parent="." unique_id=344318454]
 stream = ExtResource("3_ckb1x")
 volume_db = -10.0
 
 [node name="SonidoAtaque" type="AudioStreamPlayer" parent="." unique_id=1434221987]
 stream = ExtResource("4_wtsvc")
+=======
+[node name="SonidoSalto" type="AudioStreamPlayer2D" parent="." unique_id=929418398]
+stream = ExtResource("3_ckb1x")
+>>>>>>> 6cd49c6 (hasta nivel 9)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
