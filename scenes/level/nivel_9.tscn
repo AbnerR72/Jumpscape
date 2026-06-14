@@ -272,6 +272,7 @@ script = ExtResource("2_q7v0q")
 velocidad_cierre = 30.0
 nombre_nivel = "Nivel 9"
 siguiente_nivel = "res://scenes/level/nivel_final.tscn"
+texto_pista = "se más veloz!"
 
 [node name="plataforma2" parent="." index="0" unique_id=545447943 instance=ExtResource("2_yuxms")]
 position = Vector2(-142, -51)

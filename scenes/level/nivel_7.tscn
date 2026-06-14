@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://p8426knwdmnb" path="res://scripts/level_scripts/nivel_7.gd" id="1_kimln"]
 [ext_resource type="Texture2D" uid="uid://cwe6q10wbksyh" path="res://assets/background/grey_L1.png" id="1_sjugp"]
 [ext_resource type="Texture2D" uid="uid://bv2mcg8wv52q2" path="res://assets/background/grey_L2.png" id="2_kimln"]
+[ext_resource type="Texture2D" uid="uid://1nfwcwd8i6lm" path="res://assets/images/pista.png" id="2_y4q4r"]
 [ext_resource type="Texture2D" uid="uid://cjn00ba30pl33" path="res://assets/background/grey_L3.png" id="3_y4q4r"]
 [ext_resource type="Texture2D" uid="uid://dxid2itvnkfsi" path="res://assets/background/grey_L4.png" id="4_dy1je"]
 [ext_resource type="Texture2D" uid="uid://bk5kbfgbanjde" path="res://assets/tilesets/rpgstonetilemap.png" id="5_i1x8n"]
@@ -11,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://x6v18wsp7i5t" path="res://scenes/player/personaje.tscn" id="8_b7aw3"]
 [ext_resource type="PackedScene" uid="uid://brrpji5811mpv" path="res://scenes/objects/pinchos.tscn" id="10_achdq"]
 [ext_resource type="PackedScene" uid="uid://c7y4chetx2pk3" path="res://scenes/level/enemigo_fantasma.tscn" id="10_kimln"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dy1je"]
 
 [sub_resource type="Gradient" id="Gradient_sjugp"]
 interpolation_mode = 1
@@ -284,6 +287,82 @@ size = Vector2(20, 62)
 script = ExtResource("1_kimln")
 nombre_nivel = "Nivel 7 Huye!"
 siguiente_nivel = "res://scenes/level/nivel_8.tscn"
+texto_pista = "si te escondes se ira! aprovecha eso"
+
+[node name="CapaUI" type="CanvasLayer" parent="." unique_id=1832138844]
+
+[node name="HUD" type="Control" parent="CapaUI" unique_id=516070315]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BotonReiniciar" type="Button" parent="CapaUI/HUD" unique_id=1494373317]
+layout_mode = 0
+offset_left = 327.0
+offset_top = -236.0
+offset_right = 346.0
+offset_bottom = -217.0
+
+[node name="TextoNivel" type="Label" parent="CapaUI/HUD" unique_id=1284272426]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 57.0
+offset_right = 152.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 8
+text = "Nx: Nombre"
+
+[node name="BotonPista" type="Button" parent="CapaUI/HUD" unique_id=377812707]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="CuadroPista" type="Label" parent="CapaUI/HUD" unique_id=2119987461]
+visible = false
+layout_mode = 0
+offset_left = -150.0
+offset_top = -209.0
+offset_right = 151.0
+offset_bottom = -153.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_dy1je")
+
+[node name="MenuPausa" type="Control" parent="CapaUI" unique_id=871152518]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 270.0
+offset_top = -244.0
+offset_right = 310.0
+offset_bottom = -204.0
+
+[node name="BotonPista" type="Button" parent="CapaUI" unique_id=498639486]
+offset_left = 451.0
+offset_top = 9.0
+offset_right = 523.0
+offset_bottom = 81.0
+scale = Vector2(0.2780047, 0.2927985)
+icon = ExtResource("2_y4q4r")
+
+[node name="VentanaPista" type="Panel" parent="CapaUI" unique_id=1483304451]
+visible = false
+offset_left = 115.0
+offset_top = 3.0
+offset_right = 395.0
+offset_bottom = 30.0
+
+[node name="TextoPista" type="Label" parent="CapaUI/VentanaPista" unique_id=1897397230]
+layout_mode = 0
+offset_right = 277.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.8)
+text = "
+"
+autowrap_mode = 2
+
+[node name="Timer" type="Timer" parent="CapaUI/VentanaPista" unique_id=1343143173]
+wait_time = 7.0
+one_shot = true
 
 [node name="PuertaSalida" type="Marker2D" parent="." unique_id=1545224523]
 position = Vector2(372, 148)
@@ -368,42 +447,6 @@ scale = Vector2(0.5, 0.5)
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1660963383]
 position = Vector2(0, 4)
 color = Color(0.021434654, 0.021434627, 0.021434633, 1)
-
-[node name="CapaUI" type="CanvasLayer" parent="." unique_id=1920845594]
-
-[node name="HUD" type="Control" parent="CapaUI" unique_id=655527794]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-metadata/_edit_use_anchors_ = true
-
-[node name="BotonReiniciar" type="Button" parent="CapaUI/HUD" unique_id=866781583]
-layout_mode = 0
-offset_left = 327.0
-offset_top = -236.0
-offset_right = 346.0
-offset_bottom = -217.0
-metadata/_edit_use_anchors_ = true
-
-[node name="TextoNivel" type="Label" parent="CapaUI/HUD" unique_id=195758576]
-layout_mode = 0
-offset_left = 58.0
-offset_top = 57.0
-offset_right = 152.0
-offset_bottom = 80.0
-theme_override_font_sizes/font_size = 8
-text = "Nx: Nombre"
-metadata/_edit_use_anchors_ = true
-
-[node name="MenuPausa" type="Control" parent="CapaUI" unique_id=151844621]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = 270.0
-offset_top = -244.0
-offset_right = 310.0
-offset_bottom = -204.0
 
 [node name="personaje" parent="." unique_id=186041609 instance=ExtResource("8_b7aw3")]
 position = Vector2(-302, -20)
