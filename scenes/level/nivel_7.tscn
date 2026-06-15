@@ -285,9 +285,9 @@ size = Vector2(20, 62)
 
 [node name="Nivel7" type="Node2D" unique_id=111953083]
 script = ExtResource("1_kimln")
-nombre_nivel = "Nivel 7 Huye!"
+nombre_nivel = "Nivel 7 - Huye!"
 siguiente_nivel = "res://scenes/level/nivel_8.tscn"
-texto_pista = "si te escondes se ira! aprovecha eso"
+texto_pista = "Escondete para avanzar."
 
 [node name="CapaUI" type="CanvasLayer" parent="." unique_id=1832138844]
 

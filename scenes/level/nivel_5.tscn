@@ -11,7 +11,7 @@ size = Vector2(20, 62)
 
 [node name="Nivel5" unique_id=1512688407 instance=ExtResource("1_tsmhr")]
 script = ExtResource("2_qdrqp")
-nombre_nivel = "Gravedad CERO"
+nombre_nivel = "N5 - Gravedad CERO"
 siguiente_nivel = "res://scenes/level/nivel_6.tscn"
 texto_pista = "Usa el click para cambiar."
 

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bmmsbadmwwii5"
+path="res://.godot/imported/End Theme.wav-1d3c7cee1e105ea9f1ae757c19fd9ace.sample"
+
+[deps]
+
+source_file="res://assets/sound/End Theme.wav"
+dest_files=["res://.godot/imported/End Theme.wav-1d3c7cee1e105ea9f1ae757c19fd9ace.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

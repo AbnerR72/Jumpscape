@@ -150,7 +150,7 @@ func morir(animacion_muerte: String = "death"):
 	up_direction = Vector2.UP
 	animated_sprite_2d.flip_v = false
 	
-	# IMPORTANTE: Cambia "AnimatedSprite2D" y "muerte" por los nombres exactos que tú uses
+
 	$AnimatedSprite2D.play(animacion_muerte) 
 	# Le decimos al código que pause esta función hasta que la animación termine
 	await $AnimatedSprite2D.animation_finished
@@ -162,8 +162,13 @@ func morir(animacion_muerte: String = "death"):
 	$AnimatedSprite2D.play("idle")
 	get_tree().reload_current_scene()
 # Esta función se ejecuta automáticamente si haces click sobre el CollisionShape del personaje
-func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
+func _input(event: InputEvent) -> void:
+	# Al usar _input, Godot escucha el clic en TODA la pantalla
 	if modo_impulso_mouse and event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			# Aplicamos un impulso vertical directo (puedes ajustar el -450 a tu gusto)
+			# Aplicamos el impulso vertical directo
 			velocity.y = -450
+			
+			# (Opcional) ¡Agrega tu sonido de salto aquí para darle más impacto!
+			if has_node("SonidoSalto"):
+				$SonidoSalto.play()

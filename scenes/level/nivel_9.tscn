@@ -270,9 +270,9 @@ size = Vector2(11, 65)
 [node name="nivel_9" unique_id=1512688407 instance=ExtResource("1_n4vep")]
 script = ExtResource("2_q7v0q")
 velocidad_cierre = 30.0
-nombre_nivel = "Nivel 9"
+nombre_nivel = "Nivel 9 - De prisa"
 siguiente_nivel = "res://scenes/level/nivel_final.tscn"
-texto_pista = "se más veloz!"
+texto_pista = "Abre y corre!"
 
 [node name="plataforma2" parent="." index="0" unique_id=545447943 instance=ExtResource("2_yuxms")]
 position = Vector2(-142, -51)
@@ -284,7 +284,7 @@ tile_map_data = PackedByteArray("AAD0/wYAAAABAAAAAAAPAAYAAAABAAAAAAAQAAYAAAABAAA
 position = Vector2(-236, -194.00002)
 
 [node name="pinchos13" parent="TileMapLayer" index="1" unique_id=286710229 instance=ExtResource("3_303tm")]
-position = Vector2(-158, -138.00002)
+position = Vector2(-243.00002, -145)
 rotation = -3.12763
 scale = Vector2(1.5000001, 1.5000001)
 

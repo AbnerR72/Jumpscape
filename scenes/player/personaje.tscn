@@ -301,7 +301,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"death2",
-"speed": 3.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -467,6 +467,8 @@ script = ExtResource("1_bsujw")
 sprite_frames = SubResource("SpriteFrames_156nw")
 animation = &"death2"
 autoplay = "idle"
+frame = 2
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2056835872]
 visible = false
